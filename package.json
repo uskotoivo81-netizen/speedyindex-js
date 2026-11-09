@@ -1,0 +1,19 @@
+{
+  "name": "speedyindex",
+  "version": "0.1.0",
+  "description": "Node.js client for the SpeedyIndex API: Google, Bing and Yandex index checks, link indexing, Google Rank Tracker and webhooks.",
+  "type": "module",
+  "exports": {
+    ".": { "types": "./src/index.d.ts", "default": "./src/index.js" },
+    "./webhooks": { "types": "./src/webhooks.d.ts", "default": "./src/webhooks.js" }
+  },
+  "files": ["src", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "scripts": { "test": "node --test test/*.test.js" },
+  "keywords": ["speedyindex", "seo", "google index checker", "indexing", "backlinks", "rank tracker", "serp", "bing", "yandex"],
+  "homepage": "https://en.speedyindex.com/api.php",
+  "repository": { "type": "git", "url": "git+https://github.com/uskotoivo81-netizen/speedyindex-js.git" },
+  "bugs": { "url": "https://github.com/uskotoivo81-netizen/speedyindex-js/issues" },
+  "author": "SpeedyIndex",
+  "license": "MIT"
+}
