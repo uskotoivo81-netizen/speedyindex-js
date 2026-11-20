@@ -1,0 +1,17 @@
+{
+  "name": "@speedyindex/client",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": {
+    ".": "./mod.js",
+    "./webhooks": "./src/webhooks.js"
+  },
+  "publish": {
+    "include": [
+      "mod.js",
+      "src",
+      "README.md",
+      "LICENSE"
+    ]
+  }
+}
