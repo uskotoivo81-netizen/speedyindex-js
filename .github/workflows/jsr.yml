@@ -1,0 +1,26 @@
+name: Publish to JSR
+
+on:
+  pull_request:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - name: Check the package (pull requests)
+        if: github.event_name == 'pull_request'
+        run: npx jsr publish --dry-run
+      - name: Publish to JSR
+        if: github.event_name != 'pull_request'
+        run: npx jsr publish

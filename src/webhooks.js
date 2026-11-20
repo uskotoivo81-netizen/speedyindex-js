@@ -1,5 +1,7 @@
+/* @ts-self-types="./webhooks.d.ts" */
 // Verify Rank Tracker webhook signatures (X-SpeedyIndex-Signature: sha256=<hex HMAC-SHA256 of the raw body>).
 import { createHmac, timingSafeEqual } from "node:crypto";
+import { Buffer } from "node:buffer";
 
 export function sign(body, secret) {
   return "sha256=" + createHmac("sha256", secret).update(body).digest("hex");
